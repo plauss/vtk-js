@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.23% </span>
+                <span class="strong">58.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>202/341</span>
+                <span class='fraction'>196/335</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.33% </span>
+                <span class="strong">49.32% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>76/151</span>
+                <span class='fraction'>73/148</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.11% </span>
+                <span class="strong">58.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>201/340</span>
+                <span class='fraction'>195/334</span>
             </div>
         
             
@@ -676,7 +676,11 @@
 <a name='L611'></a><a href='#L611'>611</a>
 <a name='L612'></a><a href='#L612'>612</a>
 <a name='L613'></a><a href='#L613'>613</a>
-<a name='L614'></a><a href='#L614'>614</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L614'></a><a href='#L614'>614</a>
+<a name='L615'></a><a href='#L615'>615</a>
+<a name='L616'></a><a href='#L616'>616</a>
+<a name='L617'></a><a href='#L617'>617</a>
+<a name='L618'></a><a href='#L618'>618</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -685,18 +689,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">66170x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">73430x</span>
+<span class="cline-any cline-yes">79320x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">79314x</span>
-<span class="cline-any cline-yes">79314x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79320x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79320x</span>
+<span class="cline-any cline-yes">79320x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1297,19 +1305,23 @@ const { vtkErrorMacro } = macro;
 // perform in place string substitutions, indicate if a substitution was done
 // this is useful for building up shader strings which typically involve
 // lots of string substitutions. Return true if a substitution was done.
-function substitute(source, search, replace, all = true) {
-  const replaceStr = Array.isArray(replace) ? replace.join('\n') : replace;
-  let replaced = false;
-  if (source.search(search) !== -1) {
-    replaced = true;
-  }
-  let gflag = '';
-  if (all) {
-    gflag = 'g';
-  }
-  const regex = new RegExp(search, gflag);
-  const resultstr = source.replace(regex, replaceStr);
-  return { replace: replaced, result: resultstr };
+export function substitute(source, search, replace, all) {
+  // We only accept strings or array of strings, typeof is faster than Array.isArray
+  const replaceStr = typeof replace === 'string' ? replace : replace.join('\n');
+&nbsp;
+  // We don't need to instantiate a RegExp if we don't want a global substitution.
+  // In all other cases, we need to take the provided string or RegExp and
+  // instantiate a new one to add the `g` flag.
+  // Argument defaults are transpiled to slow `arguments`-based operations
+  // better assume undefined as flag to know if the value is set or not
+  const replaceSearch = all === false ? search : new RegExp(search, 'g');
+&nbsp;
+  const resultstr = source.replace(replaceSearch, replaceStr);
+  return {
+    // If the result is different than the input, we did perform a replacement
+    replace: resultstr !== replaceStr,
+    result: resultstr,
+  };
 }
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -1909,7 +1921,7 @@ export default { newInstance, extend, substitute };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Sep 29 2022 13:54:50 GMT+0000 (Coordinated Universal Time)
+                at Fri Sep 30 2022 19:35:14 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
