@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.92% </span>
+                <span class="strong">59.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>118/211</span>
+                <span class='fraction'>117/198</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.42% </span>
+                <span class="strong">35.48% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/35</span>
+                <span class='fraction'>11/31</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.41% </span>
+                <span class="strong">57.59% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>111/204</span>
+                <span class='fraction'>110/191</span>
             </div>
         
             
@@ -463,19 +463,8 @@
 <a name='L398'></a><a href='#L398'>398</a>
 <a name='L399'></a><a href='#L399'>399</a>
 <a name='L400'></a><a href='#L400'>400</a>
-<a name='L401'></a><a href='#L401'>401</a>
-<a name='L402'></a><a href='#L402'>402</a>
-<a name='L403'></a><a href='#L403'>403</a>
-<a name='L404'></a><a href='#L404'>404</a>
-<a name='L405'></a><a href='#L405'>405</a>
-<a name='L406'></a><a href='#L406'>406</a>
-<a name='L407'></a><a href='#L407'>407</a>
-<a name='L408'></a><a href='#L408'>408</a>
-<a name='L409'></a><a href='#L409'>409</a>
-<a name='L410'></a><a href='#L410'>410</a>
-<a name='L411'></a><a href='#L411'>411</a>
-<a name='L412'></a><a href='#L412'>412</a>
-<a name='L413'></a><a href='#L413'>413</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L401'></a><a href='#L401'>401</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -690,8 +679,6 @@
 <span class="cline-any cline-yes">117649x</span>
 <span class="cline-any cline-yes">117649x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">117649x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">117649x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -725,13 +712,9 @@
 <span class="cline-any cline-yes">7044x</span>
 <span class="cline-any cline-yes">7044x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7044x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -762,13 +745,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7044x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -889,6 +865,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import macro from 'vtk.js/Sources/macros';
 import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import vtkEdgeLocator from 'vtk.js/Sources/Common/DataModel/EdgeLocator';
 import vtkPolyData from 'vtk.js/Sources/Common/DataModel/PolyData';
 import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
 &nbsp;
@@ -908,7 +885,7 @@ function vtkImageMarchingCubes(publicAPI, model) {
   const voxelScalars = [];
   const voxelGradients = [];
   const voxelPts = [];
-  const edgeMap = new Map();
+  const edgeLocator = vtkEdgeLocator.newInstance();
 &nbsp;
   // Retrieve scalars and voxel coordinates. i-j-k is origin of voxel.
   publicAPI.getVoxelScalars = (i, j, k, slice, dims, origin, spacing, s) =&gt; {
@@ -1102,8 +1079,6 @@ function vtkImageMarchingCubes(publicAPI, model) {
     const xyz = [];
     const n = [];
     let pId;
-    let tmp;
-    const edge = [];
 &nbsp;
     publicAPI.getVoxelScalars(i, j, k, slice, dims, origin, spacing, scalars);
 &nbsp;
@@ -1136,14 +1111,10 @@ function vtkImageMarchingCubes(publicAPI, model) {
         const edgeVerts = vtkCaseTable.getEdge(voxelTris[idx + eid]);
         pId = undefined;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (model.mergePoints) {
-<span class="cstat-no" title="statement not covered" >          edge[0] = ids[edgeVerts[0]];</span>
-<span class="cstat-no" title="statement not covered" >          edge[1] = ids[edgeVerts[1]];</span>
-<span class="cstat-no" title="statement not covered" >          if (edge[0] &gt; edge[1]) {</span>
-<span class="cstat-no" title="statement not covered" >            tmp = edge[0];</span>
-<span class="cstat-no" title="statement not covered" >            edge[0] = edge[1];</span>
-<span class="cstat-no" title="statement not covered" >            edge[1] = tmp;</span>
-          }
-<span class="cstat-no" title="statement not covered" >          pId = edgeMap.get(edge);</span>
+<span class="cstat-no" title="statement not covered" >          pId = edgeLocator.isInsertedEdge(</span>
+            ids[edgeVerts[0]],
+            ids[edgeVerts[1]]
+          )?.value;
         }
         if (pId === undefined) {
           const t =
@@ -1174,14 +1145,7 @@ function vtkImageMarchingCubes(publicAPI, model) {
           }
 &nbsp;
           <span class="missing-if-branch" title="if path not taken" >I</span>if (model.mergePoints) {
-<span class="cstat-no" title="statement not covered" >            edge[0] = ids[edgeVerts[0]];</span>
-<span class="cstat-no" title="statement not covered" >            edge[1] = ids[edgeVerts[1]];</span>
-<span class="cstat-no" title="statement not covered" >            if (edge[0] &gt; edge[1]) {</span>
-<span class="cstat-no" title="statement not covered" >              tmp = edge[0];</span>
-<span class="cstat-no" title="statement not covered" >              edge[0] = edge[1];</span>
-<span class="cstat-no" title="statement not covered" >              edge[1] = tmp;</span>
-            }
-<span class="cstat-no" title="statement not covered" >            edgeMap[edge] = pId;</span>
+<span class="cstat-no" title="statement not covered" >            edgeLocator.insertEdge(ids[edgeVerts[0]], ids[edgeVerts[1]], pId);</span>
           }
         }
         tris.push(pId);
@@ -1306,7 +1270,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun Oct 30 2022 21:20:50 GMT+0000 (Coordinated Universal Time)
+                at Tue Nov 01 2022 16:29:52 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
