@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.03% </span>
+                <span class="strong">8.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/165</span>
+                <span class='fraction'>14/166</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.08% </span>
+                <span class="strong">8.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/162</span>
+                <span class='fraction'>14/163</span>
             </div>
         
             
@@ -512,7 +512,8 @@
 <a name='L447'></a><a href='#L447'>447</a>
 <a name='L448'></a><a href='#L448'>448</a>
 <a name='L449'></a><a href='#L449'>449</a>
-<a name='L450'></a><a href='#L450'>450</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -772,19 +773,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -938,17 +939,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1219,12 +1221,12 @@ function <span class="fstat-no" title="function not covered" >generateSelectionW
 // vtkWebGPUHardwareSelector methods
 // ----------------------------------------------------------------------------
 &nbsp;
-function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareSelector(</span>publicAPI, model) {
+function vtkWebGPUHardwareSelector(publicAPI, model) {
   // Set our className
-<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkWebGPUHardwareSelector');</span>
+  model.classHierarchy.push('vtkWebGPUHardwareSelector');
 &nbsp;
   //----------------------------------------------------------------------------
-<span class="cstat-no" title="statement not covered" >  publicAPI.endSelection = <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  publicAPI.endSelection = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    model.WebGPURenderer.setSelector(null);</span>
   };
 &nbsp;
@@ -1233,24 +1235,24 @@ function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareS
   // of the entire depth bufer. We could realloc hardware selection textures
   // based on the passed in size etc but it gets messy so for now we always
   // render the full size window and copy it to the buffers.
-<span class="cstat-no" title="statement not covered" >  publicAPI.getSourceDataAsync = <span class="fstat-no" title="function not covered" >as</span>ync (renderer) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!renderer || !model.WebGPURenderWindow) {</span>
+  publicAPI.getSourceDataAsync = <span class="fstat-no" title="function not covered" >as</span>ync (renderer) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!renderer || !model._WebGPURenderWindow) {</span>
 <span class="cstat-no" title="statement not covered" >      vtkErrorMacro('Renderer and view must be set before calling Select.');</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
     }
 &nbsp;
     // todo revisit making selection part of core
     // then we can do this in core
-<span class="cstat-no" title="statement not covered" >    model.WebGPURenderWindow.getRenderable().preRender();</span>
+<span class="cstat-no" title="statement not covered" >    model._WebGPURenderWindow.getRenderable().preRender();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!model.WebGPURenderWindow.getInitialized()) {</span>
-<span class="cstat-no" title="statement not covered" >      model.WebGPURenderWindow.initialize();</span>
+<span class="cstat-no" title="statement not covered" >    if (!model._WebGPURenderWindow.getInitialized()) {</span>
+<span class="cstat-no" title="statement not covered" >      model._WebGPURenderWindow.initialize();</span>
 <span class="cstat-no" title="statement not covered" >      await new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        model.WebGPURenderWindow.onInitialized(resolve);</span>
+<span class="cstat-no" title="statement not covered" >        model._WebGPURenderWindow.onInitialized(resolve);</span>
       });
     }
 &nbsp;
-    const webGPURenderer = <span class="cstat-no" title="statement not covered" >model.WebGPURenderWindow.getViewNodeFor(renderer);</span>
+    const webGPURenderer = <span class="cstat-no" title="statement not covered" >model._WebGPURenderWindow.getViewNodeFor(renderer);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!webGPURenderer) {</span>
 <span class="cstat-no" title="statement not covered" >      return false;</span>
@@ -1261,12 +1263,12 @@ function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareS
     const originalSuppress = <span class="cstat-no" title="statement not covered" >webGPURenderer.getSuppressClear();</span>
 <span class="cstat-no" title="statement not covered" >    webGPURenderer.setSuppressClear(true);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    model._selectionPass.traverse(model.WebGPURenderWindow, webGPURenderer);</span>
+<span class="cstat-no" title="statement not covered" >    model._selectionPass.traverse(model._WebGPURenderWindow, webGPURenderer);</span>
 &nbsp;
     // restore original background
 <span class="cstat-no" title="statement not covered" >    webGPURenderer.setSuppressClear(originalSuppress);</span>
 &nbsp;
-    const device = <span class="cstat-no" title="statement not covered" >model.WebGPURenderWindow.getDevice();</span>
+    const device = <span class="cstat-no" title="statement not covered" >model._WebGPURenderWindow.getDevice();</span>
     const texture = <span class="cstat-no" title="statement not covered" >model._selectionPass.getColorTexture();</span>
     const depthTexture = <span class="cstat-no" title="statement not covered" >model._selectionPass.getDepthTexture();</span>
 &nbsp;
@@ -1280,7 +1282,7 @@ function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareS
       fieldAssociation: model.fieldAssociation,
       renderer,
       webGPURenderer,
-      webGPURenderWindow: model.WebGPURenderWindow,
+      webGPURenderWindow: model._WebGPURenderWindow,
       width: texture.getWidth(),
       height: texture.getHeight(),
     };
@@ -1302,7 +1304,7 @@ function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareS
     /* eslint-enable no-bitwise */
     /* eslint-enable no-undef */
 &nbsp;
-    const cmdEnc = <span class="cstat-no" title="statement not covered" >model.WebGPURenderWindow.getCommandEncoder();</span>
+    const cmdEnc = <span class="cstat-no" title="statement not covered" >model._WebGPURenderWindow.getCommandEncoder();</span>
 <span class="cstat-no" title="statement not covered" >    cmdEnc.copyTextureToBuffer(</span>
       {
         texture: texture.getHandle(),
@@ -1381,23 +1383,24 @@ function <span class="fstat-no" title="function not covered" >vtkWebGPUHardwareS
 // ----------------------------------------------------------------------------
 &nbsp;
 const DEFAULT_VALUES = {
-  WebGPURenderWindow: null,
+  // WebGPURenderWindow: null,
 };
 &nbsp;
 // ----------------------------------------------------------------------------
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >extend(</span>publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+export function extend(publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
 &nbsp;
   // Build VTK API
-<span class="cstat-no" title="statement not covered" >  vtkHardwareSelector.extend(publicAPI, model, initialValues);</span>
+  vtkHardwareSelector.extend(publicAPI, model, initialValues);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  model._selectionPass = vtkWebGPUHardwareSelectionPass.newInstance();</span>
+  model._selectionPass = vtkWebGPUHardwareSelectionPass.newInstance();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, ['WebGPURenderWindow']);</span>
+  macro.setGet(publicAPI, model, ['_WebGPURenderWindow']);
+  macro.moveToProtected(publicAPI, model, ['WebGPURenderWindow']);
 &nbsp;
   // Object methods
-<span class="cstat-no" title="statement not covered" >  vtkWebGPUHardwareSelector(publicAPI, model);</span>
+  vtkWebGPUHardwareSelector(publicAPI, model);
 }
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -1417,7 +1420,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 04 2023 15:02:18 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 15:47:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

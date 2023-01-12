@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.25% </span>
+                <span class="strong">60.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/27</span>
+                <span class='fraction'>17/28</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56% </span>
+                <span class="strong">57.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/25</span>
+                <span class='fraction'>15/26</span>
             </div>
         
             
@@ -146,30 +146,31 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
+<span class="cline-any cline-yes">194x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69646x</span>
+<span class="cline-any cline-yes">68072x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
-<span class="cline-any cline-yes">1491x</span>
-<span class="cline-any cline-yes">1491x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">34956x</span>
+<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-yes">1500x</span>
+<span class="cline-any cline-yes">1500x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34169x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,20 +207,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
+<span class="cline-any cline-yes">194x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
-<span class="cline-any cline-yes">185x</span>
-<span class="cline-any cline-yes">185x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-yes">194x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">185x</span>
+<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,7 +260,7 @@ function vtkRenderPass(publicAPI, model) {
     }
 &nbsp;
     // we just render our delegates in order
-<span class="cstat-no" title="statement not covered" >    model.currentParent = parent;</span>
+<span class="cstat-no" title="statement not covered" >    model._currentParent = parent;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    model.preDelegateOperations.forEach(<span class="fstat-no" title="function not covered" >(v</span>al) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      publicAPI.setCurrentOperation(val);</span>
@@ -296,10 +298,11 @@ export function extend(publicAPI, model, initialValues = <span class="branch-0 c
   macro.get(publicAPI, model, ['currentOperation']);
   macro.setGet(publicAPI, model, [
     'delegates',
-    'currentParent',
+    '_currentParent',
     'preDelegateOperations',
     'postDelegateOperations',
   ]);
+  macro.moveToProtected(publicAPI, model, ['currentParent']);
 &nbsp;
   // Object methods
   vtkRenderPass(publicAPI, model);
@@ -319,7 +322,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 04 2023 15:02:18 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 15:47:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

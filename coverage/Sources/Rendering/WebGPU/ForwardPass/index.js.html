@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.89% </span>
+                <span class="strong">18.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/77</span>
+                <span class='fraction'>14/77</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>2/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.05% </span>
+                <span class="strong">18.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/74</span>
+                <span class='fraction'>14/74</span>
             </div>
         
             
@@ -337,15 +337,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,7 +420,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -436,8 +436,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -489,10 +489,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -513,19 +513,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -571,21 +571,21 @@ fn main(
 &nbsp;
 // ----------------------------------------------------------------------------
 &nbsp;
-function <span class="fstat-no" title="function not covered" >vtkForwardPass(</span>publicAPI, model) {
+function vtkForwardPass(publicAPI, model) {
   // Set our className
-<span class="cstat-no" title="statement not covered" >  model.classHierarchy.push('vtkForwardPass');</span>
+  model.classHierarchy.push('vtkForwardPass');
 &nbsp;
   // this pass implements a forward rendering pipeline
   // if both volumes and opaque geometry are present
   // it will mix the two together by capturing a zbuffer
   // first
-<span class="cstat-no" title="statement not covered" >  publicAPI.traverse = <span class="fstat-no" title="function not covered" >(v</span>iewNode, parent = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> =&gt; {</span>
+  publicAPI.traverse = <span class="fstat-no" title="function not covered" >(v</span>iewNode, parent = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (model.deleted) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
 &nbsp;
     // we just render our delegates in order
-<span class="cstat-no" title="statement not covered" >    model.currentParent = parent;</span>
+<span class="cstat-no" title="statement not covered" >    model._currentParent = parent;</span>
 &nbsp;
     // build
 <span class="cstat-no" title="statement not covered" >    publicAPI.setCurrentOperation('buildPass');</span>
@@ -656,7 +656,7 @@ function <span class="fstat-no" title="function not covered" >vtkForwardPass(</s
     }
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  publicAPI.finalPass = <span class="fstat-no" title="function not covered" >(v</span>iewNode, renNode) =&gt; {</span>
+  publicAPI.finalPass = <span class="fstat-no" title="function not covered" >(v</span>iewNode, renNode) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!model._finalBlitEncoder) {</span>
 <span class="cstat-no" title="statement not covered" >      publicAPI.createFinalBlitEncoder(viewNode);</span>
     }
@@ -672,7 +672,7 @@ function <span class="fstat-no" title="function not covered" >vtkForwardPass(</s
 <span class="cstat-no" title="statement not covered" >    model._finalBlitEncoder.end();</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  publicAPI.createFinalBlitEncoder = <span class="fstat-no" title="function not covered" >(v</span>iewNode) =&gt; {</span>
+  publicAPI.createFinalBlitEncoder = <span class="fstat-no" title="function not covered" >(v</span>iewNode) =&gt; {
 <span class="cstat-no" title="statement not covered" >    model._finalBlitEncoder = vtkWebGPURenderEncoder.newInstance({</span>
       label: 'forwardPassBlit',
     });
@@ -725,10 +725,10 @@ function <span class="fstat-no" title="function not covered" >vtkForwardPass(</s
     );
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  publicAPI.incrementOpaqueActorCount = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >model.opaqueActorCount++;</span></span>
-<span class="cstat-no" title="statement not covered" >  publicAPI.incrementTranslucentActorCount = <span class="fstat-no" title="function not covered" >()</span> =&gt;</span>
+  publicAPI.incrementOpaqueActorCount = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >model.opaqueActorCount++;</span>
+  publicAPI.incrementTranslucentActorCount = <span class="fstat-no" title="function not covered" >()</span> =&gt;
 <span class="cstat-no" title="statement not covered" >    model.translucentActorCount++;</span>
-<span class="cstat-no" title="statement not covered" >  publicAPI.addVolume = <span class="fstat-no" title="function not covered" >(v</span>olume) =&gt; {</span>
+  publicAPI.addVolume = <span class="fstat-no" title="function not covered" >(v</span>olume) =&gt; {
 <span class="cstat-no" title="statement not covered" >    model.volumes.push(volume);</span>
   };
 }
@@ -748,20 +748,20 @@ const DEFAULT_VALUES = {
 &nbsp;
 // ----------------------------------------------------------------------------
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >extend(</span>publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
+export function extend(publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
 &nbsp;
   // Build VTK API
-<span class="cstat-no" title="statement not covered" >  vtkRenderPass.extend(publicAPI, model, initialValues);</span>
+  vtkRenderPass.extend(publicAPI, model, initialValues);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  macro.setGet(publicAPI, model, [</span>
+  macro.setGet(publicAPI, model, [
     'opaquePass',
     'translucentPass',
     'volumePass',
   ]);
 &nbsp;
   // Object methods
-<span class="cstat-no" title="statement not covered" >  vtkForwardPass(publicAPI, model);</span>
+  vtkForwardPass(publicAPI, model);
 }
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -778,7 +778,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 04 2023 15:02:18 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 15:47:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

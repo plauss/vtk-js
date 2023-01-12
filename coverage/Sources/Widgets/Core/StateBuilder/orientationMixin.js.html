@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.16% </span>
+                <span class="strong">29.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/24</span>
+                <span class='fraction'>7/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.16% </span>
+                <span class="strong">29.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/24</span>
+                <span class='fraction'>7/24</span>
             </div>
         
             
@@ -174,16 +174,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,9 +211,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,17 +251,17 @@ function <span class="fstat-no" title="function not covered" >isSame(</span>o, p
 &nbsp;
 // ----------------------------------------------------------------------------
 &nbsp;
-function <span class="fstat-no" title="function not covered" >vtkOrientationMixin(</span>publicAPI, model) {
-  const previousPoints = <span class="cstat-no" title="statement not covered" >{ o: [], p1: [], p2: [] };</span>
+function vtkOrientationMixin(publicAPI, model) {
+  const previousPoints = { o: [], p1: [], p2: [] };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  publicAPI.normalize = <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+  publicAPI.normalize = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    vtkMath.normalize(model.up);</span>
 <span class="cstat-no" title="statement not covered" >    vtkMath.normalize(model.right);</span>
 <span class="cstat-no" title="statement not covered" >    vtkMath.normalize(model.direction);</span>
 <span class="cstat-no" title="statement not covered" >    publicAPI.modified();</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  publicAPI.updateFromOriginRightUp = <span class="fstat-no" title="function not covered" >(o</span>, p1, p2) =&gt; {</span>
+  publicAPI.updateFromOriginRightUp = <span class="fstat-no" title="function not covered" >(o</span>, p1, p2) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (isSame(o, p1, p2, previousPoints)) {</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
@@ -288,10 +288,10 @@ const DEFAULT_VALUES = {
 &nbsp;
 // ----------------------------------------------------------------------------
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >extend(</span>publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  Object.assign(model, DEFAULT_VALUES, initialValues);</span>
-<span class="cstat-no" title="statement not covered" >  macro.setGetArray(publicAPI, model, ['up', 'right', 'direction'], 3);</span>
-<span class="cstat-no" title="statement not covered" >  vtkOrientationMixin(publicAPI, model);</span>
+export function extend(publicAPI, model, initialValues = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  Object.assign(model, DEFAULT_VALUES, initialValues);
+  macro.setGetArray(publicAPI, model, ['up', 'right', 'direction'], 3);
+  vtkOrientationMixin(publicAPI, model);
 }
 &nbsp;
 // ----------------------------------------------------------------------------
@@ -304,7 +304,7 @@ export default { extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 04 2023 15:02:18 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 15:47:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
