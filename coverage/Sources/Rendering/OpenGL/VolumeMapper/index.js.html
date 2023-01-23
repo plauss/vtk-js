@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.39% </span>
+                <span class="strong">73.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>526/707</span>
+                <span class='fraction'>526/714</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.12% </span>
+                <span class="strong">73.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>510/688</span>
+                <span class='fraction'>510/695</span>
             </div>
         
             
@@ -1719,7 +1719,27 @@
 <a name='L1654'></a><a href='#L1654'>1654</a>
 <a name='L1655'></a><a href='#L1655'>1655</a>
 <a name='L1656'></a><a href='#L1656'>1656</a>
-<a name='L1657'></a><a href='#L1657'>1657</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1657'></a><a href='#L1657'>1657</a>
+<a name='L1658'></a><a href='#L1658'>1658</a>
+<a name='L1659'></a><a href='#L1659'>1659</a>
+<a name='L1660'></a><a href='#L1660'>1660</a>
+<a name='L1661'></a><a href='#L1661'>1661</a>
+<a name='L1662'></a><a href='#L1662'>1662</a>
+<a name='L1663'></a><a href='#L1663'>1663</a>
+<a name='L1664'></a><a href='#L1664'>1664</a>
+<a name='L1665'></a><a href='#L1665'>1665</a>
+<a name='L1666'></a><a href='#L1666'>1666</a>
+<a name='L1667'></a><a href='#L1667'>1667</a>
+<a name='L1668'></a><a href='#L1668'>1668</a>
+<a name='L1669'></a><a href='#L1669'>1669</a>
+<a name='L1670'></a><a href='#L1670'>1670</a>
+<a name='L1671'></a><a href='#L1671'>1671</a>
+<a name='L1672'></a><a href='#L1672'>1672</a>
+<a name='L1673'></a><a href='#L1673'>1673</a>
+<a name='L1674'></a><a href='#L1674'>1674</a>
+<a name='L1675'></a><a href='#L1675'>1675</a>
+<a name='L1676'></a><a href='#L1676'>1676</a>
+<a name='L1677'></a><a href='#L1677'>1677</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2530,8 +2550,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -4186,8 +4226,28 @@ function vtkOpenGLVolumeMapper(publicAPI, model) {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      program.setUniformMatrix('vWCtoIDX', worldToIndex);</span>
 &nbsp;
+      const camera = <span class="cstat-no" title="statement not covered" >ren.getActiveCamera();</span>
+      const [cRange0, cRange1] = <span class="cstat-no" title="statement not covered" >camera.getClippingRange();</span>
+      const distance = <span class="cstat-no" title="statement not covered" >camera.getDistance();</span>
+&nbsp;
+      // set the clipping range to be model.distance and model.distance + 0.1
+      // since we use the in the keyMats.wcpc (world to projection) matrix
+      // the projection matrix calculation relies on the clipping range to be
+      // set correctly. This is done inside the interactorStyleMPRSlice which
+      // limits use cases where the interactor style is not used.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      camera.setClippingRange(distance, distance + 0.1);</span>
+      const labelOutlineKeyMats = <span class="cstat-no" title="statement not covered" >model.openGLCamera.getKeyMatrices(ren);</span>
+&nbsp;
       // Get the projection coordinate to world coordinate transformation matrix.
-<span class="cstat-no" title="statement not covered" >      mat4.invert(model.projectionToWorld, keyMats.wcpc);</span>
+<span class="cstat-no" title="statement not covered" >      mat4.invert(model.projectionToWorld, labelOutlineKeyMats.wcpc);</span>
+&nbsp;
+      // reset the clipping range since the keyMats are cached
+<span class="cstat-no" title="statement not covered" >      camera.setClippingRange(cRange0, cRange1);</span>
+&nbsp;
+      // to re compute the matrices for the current camera and cache them
+<span class="cstat-no" title="statement not covered" >      model.openGLCamera.getKeyMatrices(ren);</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >      program.setUniformMatrix('PCWCMatrix', model.projectionToWorld);</span>
 &nbsp;
       const size = <span class="cstat-no" title="statement not covered" >publicAPI.getRenderTargetSize();</span>
@@ -5038,7 +5098,7 @@ registerOverride('vtkVolumeMapper', newInstance);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jan 23 2023 21:05:29 GMT+0000 (Coordinated Universal Time)
+                at Mon Jan 23 2023 21:38:51 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
