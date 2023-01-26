@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.73% </span>
+                <span class="strong">55.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>403/723</span>
+                <span class='fraction'>406/729</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.85% </span>
+                <span class="strong">49.86% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>175/351</span>
+                <span class='fraction'>181/363</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.86% </span>
+                <span class="strong">55.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>386/691</span>
+                <span class='fraction'>389/697</span>
             </div>
         
             
@@ -1790,7 +1790,19 @@
 <a name='L1725'></a><a href='#L1725'>1725</a>
 <a name='L1726'></a><a href='#L1726'>1726</a>
 <a name='L1727'></a><a href='#L1727'>1727</a>
-<a name='L1728'></a><a href='#L1728'>1728</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1728'></a><a href='#L1728'>1728</a>
+<a name='L1729'></a><a href='#L1729'>1729</a>
+<a name='L1730'></a><a href='#L1730'>1730</a>
+<a name='L1731'></a><a href='#L1731'>1731</a>
+<a name='L1732'></a><a href='#L1732'>1732</a>
+<a name='L1733'></a><a href='#L1733'>1733</a>
+<a name='L1734'></a><a href='#L1734'>1734</a>
+<a name='L1735'></a><a href='#L1735'>1735</a>
+<a name='L1736'></a><a href='#L1736'>1736</a>
+<a name='L1737'></a><a href='#L1737'>1737</a>
+<a name='L1738'></a><a href='#L1738'>1738</a>
+<a name='L1739'></a><a href='#L1739'>1739</a>
+<a name='L1740'></a><a href='#L1740'>1740</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2615,6 +2627,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">259x</span>
+<span class="cline-any cline-yes">238x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2731,6 +2745,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">198x</span>
 <span class="cline-any cline-yes">198x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2810,6 +2826,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2902,6 +2920,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3058,6 +3078,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3377,6 +3399,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4341,17 +4365,19 @@ function vtkOpenGLTexture(publicAPI, model) {
         model.width,
         model.height
       );
-      model.context.texSubImage2D(
-        model.target,
-        0,
-        0,
-        0,
-        model.width,
-        model.height,
-        model.format,
-        model.openGLDataType,
-        scaledData[0]
-      );
+      if (scaledData[0] != null) {
+        model.context.texSubImage2D(
+          model.target,
+          0,
+          0,
+          0,
+          model.width,
+          model.height,
+          model.format,
+          model.openGLDataType,
+          scaledData[0]
+        );
+      }
     } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >      model.context.texImage2D(</span>
         model.target,
@@ -4457,17 +4483,19 @@ function vtkOpenGLTexture(publicAPI, model) {
           tempData = invertedData[6 * j + i];
         }
         if (model._openGLRenderWindow.getWebgl2()) {
-          model.context.texSubImage2D(
-            model.context.TEXTURE_CUBE_MAP_POSITIVE_X + i,
-            j,
-            0,
-            0,
-            w,
-            h,
-            model.format,
-            model.openGLDataType,
-            tempData
-          );
+          if (tempData != null) {
+            model.context.texSubImage2D(
+              model.context.TEXTURE_CUBE_MAP_POSITIVE_X + i,
+              j,
+              0,
+              0,
+              w,
+              h,
+              model.format,
+              model.openGLDataType,
+              tempData
+            );
+          }
         } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >          model.context.texImage2D(</span>
             model.context.TEXTURE_CUBE_MAP_POSITIVE_X + i,
@@ -4536,17 +4564,19 @@ function vtkOpenGLTexture(publicAPI, model) {
         model.width,
         model.height
       );
-      model.context.texSubImage2D(
-        model.target,
-        0,
-        0,
-        0,
-        model.width,
-        model.height,
-        model.format,
-        model.openGLDataType,
-        data
-      );
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (data != null) {
+<span class="cstat-no" title="statement not covered" >        model.context.texSubImage2D(</span>
+          model.target,
+          0,
+          0,
+          0,
+          model.width,
+          model.height,
+          model.format,
+          model.openGLDataType,
+          data
+        );
+      }
     } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >      model.context.texImage2D(</span>
         model.target,
@@ -4628,17 +4658,19 @@ function vtkOpenGLTexture(publicAPI, model) {
         model.width,
         model.height
       );
-<span class="cstat-no" title="statement not covered" >      model.context.texSubImage2D(</span>
-        model.target,
-        0,
-        0,
-        0,
-        model.width,
-        model.height,
-        model.format,
-        model.openGLDataType,
-        safeImage
-      );
+<span class="cstat-no" title="statement not covered" >      if (safeImage != null) {</span>
+<span class="cstat-no" title="statement not covered" >        model.context.texSubImage2D(</span>
+          model.target,
+          0,
+          0,
+          0,
+          model.width,
+          model.height,
+          model.format,
+          model.openGLDataType,
+          safeImage
+        );
+      }
     } else {
 <span class="cstat-no" title="statement not covered" >      model.context.texImage2D(</span>
         model.target,
@@ -4784,19 +4816,21 @@ function vtkOpenGLTexture(publicAPI, model) {
         model.height,
         model.depth
       );
-      model.context.texSubImage3D(
-        model.target,
-        0,
-        0,
-        0,
-        0,
-        model.width,
-        model.height,
-        model.depth,
-        model.format,
-        model.openGLDataType,
-        scaledData[0]
-      );
+      if (scaledData[0] != null) {
+        model.context.texSubImage3D(
+          model.target,
+          0,
+          0,
+          0,
+          0,
+          model.width,
+          model.height,
+          model.depth,
+          model.format,
+          model.openGLDataType,
+          scaledData[0]
+        );
+      }
     } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >      model.context.texImage3D(</span>
         model.target,
@@ -5103,17 +5137,19 @@ function vtkOpenGLTexture(publicAPI, model) {
         model.width,
         model.height
       );
-<span class="cstat-no" title="statement not covered" >      model.context.texSubImage2D(</span>
-        model.target,
-        0,
-        0,
-        0,
-        model.width,
-        model.height,
-        model.format,
-        model.openGLDataType,
-        newArray
-      );
+<span class="cstat-no" title="statement not covered" >      if (newArray != null) {</span>
+<span class="cstat-no" title="statement not covered" >        model.context.texSubImage2D(</span>
+          model.target,
+          0,
+          0,
+          0,
+          model.width,
+          model.height,
+          model.format,
+          model.openGLDataType,
+          newArray
+        );
+      }
     } else {
 <span class="cstat-no" title="statement not covered" >      model.context.texImage2D(</span>
         model.target,
@@ -5251,7 +5287,7 @@ registerOverride('vtkTexture', newInstance);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jan 23 2023 22:57:06 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 26 2023 20:44:14 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
