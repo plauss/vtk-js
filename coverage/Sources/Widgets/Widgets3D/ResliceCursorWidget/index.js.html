@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">86.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>169/195</span>
+                <span class='fraction'>162/188</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.91% </span>
+                <span class="strong">86.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>166/191</span>
+                <span class='fraction'>159/184</span>
             </div>
         
             
@@ -714,16 +714,7 @@
 <a name='L649'></a><a href='#L649'>649</a>
 <a name='L650'></a><a href='#L650'>650</a>
 <a name='L651'></a><a href='#L651'>651</a>
-<a name='L652'></a><a href='#L652'>652</a>
-<a name='L653'></a><a href='#L653'>653</a>
-<a name='L654'></a><a href='#L654'>654</a>
-<a name='L655'></a><a href='#L655'>655</a>
-<a name='L656'></a><a href='#L656'>656</a>
-<a name='L657'></a><a href='#L657'>657</a>
-<a name='L658'></a><a href='#L658'>658</a>
-<a name='L659'></a><a href='#L659'>659</a>
-<a name='L660'></a><a href='#L660'>660</a>
-<a name='L661'></a><a href='#L661'>661</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L652'></a><a href='#L652'>652</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1190,9 +1181,12 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">108x</span>
+<span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1204,18 +1198,6 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">36x</span>
@@ -1401,7 +1383,7 @@ import {
 } from 'vtk.js/Sources/Widgets/Widgets3D/ResliceCursorWidget/helpers';
 import { ViewTypes } from 'vtk.js/Sources/Widgets/Core/WidgetManager/Constants';
 &nbsp;
-import { vec4, mat4 } from 'gl-matrix';
+import { mat4 } from 'gl-matrix';
 import vtkMatrixBuilder from 'vtk.js/Sources/Common/Core/MatrixBuilder';
 &nbsp;
 const VTK_INT_MAX = 2147483647;
@@ -1849,10 +1831,13 @@ function vtkResliceCursorWidget(publicAPI, model) {
 &nbsp;
     const newResliceAxes = mat4.identity(new Float64Array(16));
 &nbsp;
+    const planeOrigin = planeSource.getOrigin();
+&nbsp;
     for (let i = 0; i &lt; 3; i++) {
-      newResliceAxes[4 * i + 0] = planeAxis1[i];
-      newResliceAxes[4 * i + 1] = planeAxis2[i];
-      newResliceAxes[4 * i + 2] = normal[i];
+      newResliceAxes[i] = planeAxis1[i];
+      newResliceAxes[4 + i] = planeAxis2[i];
+      newResliceAxes[8 + i] = normal[i];
+      newResliceAxes[12 + i] = planeOrigin[i];
     }
 &nbsp;
     const spacingX =
@@ -1864,18 +1849,6 @@ function vtkResliceCursorWidget(publicAPI, model) {
       Math.abs(planeAxis2[0] * spacing[0]) +
       Math.abs(planeAxis2[1] * spacing[1]) +
       Math.abs(planeAxis2[2] * spacing[2]);
-&nbsp;
-    const planeOrigin = [...planeSource.getOrigin(), 1.0];
-    const originXYZW = [];
-    const newOriginXYZW = [];
-&nbsp;
-    vec4.transformMat4(originXYZW, planeOrigin, newResliceAxes);
-    mat4.transpose(newResliceAxes, newResliceAxes);
-    vec4.transformMat4(newOriginXYZW, originXYZW, newResliceAxes);
-&nbsp;
-    newResliceAxes[4 * 3 + 0] = newOriginXYZW[0];
-    newResliceAxes[4 * 3 + 1] = newOriginXYZW[1];
-    newResliceAxes[4 * 3 + 2] = newOriginXYZW[2];
 &nbsp;
     // Compute a new set of resliced extents
     let extentX = 0;
@@ -2050,7 +2023,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Feb 07 2023 08:05:52 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 07 2023 08:16:52 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
