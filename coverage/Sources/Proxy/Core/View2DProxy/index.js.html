@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.79% </span>
+                <span class="strong">12.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/178</span>
+                <span class='fraction'>21/169</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/84</span>
+                <span class='fraction'>0/78</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.13% </span>
+                <span class="strong">12.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/173</span>
+                <span class='fraction'>21/164</span>
             </div>
         
             
@@ -428,28 +428,7 @@
 <a name='L363'></a><a href='#L363'>363</a>
 <a name='L364'></a><a href='#L364'>364</a>
 <a name='L365'></a><a href='#L365'>365</a>
-<a name='L366'></a><a href='#L366'>366</a>
-<a name='L367'></a><a href='#L367'>367</a>
-<a name='L368'></a><a href='#L368'>368</a>
-<a name='L369'></a><a href='#L369'>369</a>
-<a name='L370'></a><a href='#L370'>370</a>
-<a name='L371'></a><a href='#L371'>371</a>
-<a name='L372'></a><a href='#L372'>372</a>
-<a name='L373'></a><a href='#L373'>373</a>
-<a name='L374'></a><a href='#L374'>374</a>
-<a name='L375'></a><a href='#L375'>375</a>
-<a name='L376'></a><a href='#L376'>376</a>
-<a name='L377'></a><a href='#L377'>377</a>
-<a name='L378'></a><a href='#L378'>378</a>
-<a name='L379'></a><a href='#L379'>379</a>
-<a name='L380'></a><a href='#L380'>380</a>
-<a name='L381'></a><a href='#L381'>381</a>
-<a name='L382'></a><a href='#L382'>382</a>
-<a name='L383'></a><a href='#L383'>383</a>
-<a name='L384'></a><a href='#L384'>384</a>
-<a name='L385'></a><a href='#L385'>385</a>
-<a name='L386'></a><a href='#L386'>386</a>
-<a name='L387'></a><a href='#L387'>387</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L366'></a><a href='#L366'>366</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -488,35 +467,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -872,38 +830,17 @@ function <span class="fstat-no" title="function not covered" >getPropCoarseHull(
 <span class="cstat-no" title="statement not covered" >  if (!prop.getVisibility() || !prop.getUseBounds()) {</span>
 <span class="cstat-no" title="statement not covered" >    return [];</span>
   }
-  let finestBounds = <span class="cstat-no" title="statement not covered" >prop.getBounds();</span>
-  let finestMatrix = <span class="cstat-no" title="statement not covered" >null;</span>
-&nbsp;
-  // Better bounds using mapper bounds and prop matrix
-  const mapper = <span class="cstat-no" title="statement not covered" >prop?.getMapper?.();</span>
-  const mapperBounds = <span class="cstat-no" title="statement not covered" >mapper?.getBounds?.();</span>
-<span class="cstat-no" title="statement not covered" >  if (mapperBounds &amp;&amp; vtkBoundingBox.isValid(mapperBounds) &amp;&amp; prop.getMatrix) {</span>
-<span class="cstat-no" title="statement not covered" >    finestBounds = mapperBounds;</span>
-<span class="cstat-no" title="statement not covered" >    finestMatrix = prop.getMatrix().slice();</span>
-<span class="cstat-no" title="statement not covered" >    mat4.transpose(finestMatrix, finestMatrix);</span>
-&nbsp;
-    // Better bounds using the image data matrix and prop matrix + imageData matrix
-<span class="cstat-no" title="statement not covered" >    if (</span>
-      mapper.isA('vtkImageMapper') &amp;&amp;
-      mapper.getInputData()?.isA('vtkImageData')
-    ) {
-<span class="cstat-no" title="statement not covered" >      prop.computeMatrix();</span>
-      const imageData = <span class="cstat-no" title="statement not covered" >mapper.getInputData();</span>
-<span class="cstat-no" title="statement not covered" >      finestBounds = imageData.getSpatialExtent();</span>
-      const imageDataMatrix = <span class="cstat-no" title="statement not covered" >imageData.getIndexToWorld();</span>
-<span class="cstat-no" title="statement not covered" >      mat4.mul(finestMatrix, finestMatrix, imageDataMatrix);</span>
-    }
-  }
-&nbsp;
-  // Compute corners and transform them if needed
-  // It gives a more accurate hull than computing the corners of a transformed bounding box
+  const mapperBounds = <span class="cstat-no" title="statement not covered" >prop?.getMapper?.()?.getBounds?.();</span>
   const corners = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  vtkBoundingBox.getCorners(finestBounds, corners);</span>
-<span class="cstat-no" title="statement not covered" >  if (finestMatrix) {</span>
-<span class="cstat-no" title="statement not covered" >    corners.forEach(<span class="fstat-no" title="function not covered" >(p</span>t) =&gt; <span class="cstat-no" title="statement not covered" >vec3.transformMat4(pt, pt, finestMatrix))</span>;</span>
+<span class="cstat-no" title="statement not covered" >  if (mapperBounds &amp;&amp; vtkBoundingBox.isValid(mapperBounds) &amp;&amp; prop.getMatrix) {</span>
+<span class="cstat-no" title="statement not covered" >    vtkBoundingBox.getCorners(mapperBounds, corners);</span>
+    const matrix = <span class="cstat-no" title="statement not covered" >prop.getMatrix().slice();</span>
+<span class="cstat-no" title="statement not covered" >    mat4.transpose(matrix, matrix);</span>
+<span class="cstat-no" title="statement not covered" >    corners.forEach(<span class="fstat-no" title="function not covered" >(p</span>t) =&gt; <span class="cstat-no" title="statement not covered" >vec3.transformMat4(pt, pt, matrix))</span>;</span>
+  } else {
+    const propBounds = <span class="cstat-no" title="statement not covered" >prop.getBounds();</span>
+<span class="cstat-no" title="statement not covered" >    vtkBoundingBox.getCorners(propBounds, corners);</span>
   }
-&nbsp;
 <span class="cstat-no" title="statement not covered" >  return corners;</span>
 }
 &nbsp;
@@ -1228,7 +1165,7 @@ export default { newInstance, extend };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Feb 07 2023 08:16:52 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 07 2023 08:09:24 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
