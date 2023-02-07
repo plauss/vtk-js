@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.33% </span>
+                <span class="strong">57.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>418/729</span>
+                <span class='fraction'>419/729</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.04% </span>
+                <span class="strong">49.86% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>179/365</span>
+                <span class='fraction'>188/377</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.53% </span>
+                <span class="strong">57.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>401/697</span>
+                <span class='fraction'>402/697</span>
             </div>
         
             
@@ -2630,15 +2630,15 @@
 <span class="cline-any cline-yes">268x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">268x</span>
-<span class="cline-any cline-yes">268x</span>
+<span class="cline-any cline-yes">139x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">268x</span>
-<span class="cline-any cline-yes">247x</span>
+<span class="cline-any cline-yes">139x</span>
+<span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2651,7 +2651,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4377,7 +4377,7 @@ function vtkOpenGLTexture(publicAPI, model) {
     model.context.pixelStorei(model.context.UNPACK_FLIP_Y_WEBGL, flip);
     model.context.pixelStorei(model.context.UNPACK_ALIGNMENT, 1);
 &nbsp;
-    if (model._openGLRenderWindow.getWebgl2()) {
+    if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {
       model.context.texStorage2D(
         model.target,
         1,
@@ -4398,8 +4398,8 @@ function vtkOpenGLTexture(publicAPI, model) {
           scaledData[0]
         );
       }
-    } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >      model.context.texImage2D(</span>
+    } else {
+      model.context.texImage2D(
         model.target,
         0,
         model.internalFormat,
@@ -4479,7 +4479,7 @@ function vtkOpenGLTexture(publicAPI, model) {
     // Source texture data from the PBO.
     model.context.pixelStorei(model.context.UNPACK_ALIGNMENT, 1);
 &nbsp;
-    if (model._openGLRenderWindow.getWebgl2()) {
+    if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {
       model.context.texStorage2D(
         model.target,
         6,
@@ -4502,7 +4502,7 @@ function vtkOpenGLTexture(publicAPI, model) {
         if (j &lt;= model.maxLevel) {
           tempData = invertedData[6 * j + i];
         }
-        if (model._openGLRenderWindow.getWebgl2()) {
+        if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {
           if (tempData != null) {
             model.context.texSubImage2D(
               model.context.TEXTURE_CUBE_MAP_POSITIVE_X + i,
@@ -4576,7 +4576,7 @@ function vtkOpenGLTexture(publicAPI, model) {
     // model.context.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
     model.context.pixelStorei(model.context.UNPACK_ALIGNMENT, 1);
 &nbsp;
-    if (model._openGLRenderWindow.getWebgl2()) {
+    if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {
       model.context.texStorage2D(
         model.target,
         1,
@@ -4670,7 +4670,7 @@ function vtkOpenGLTexture(publicAPI, model) {
     );
     const safeImage = <span class="cstat-no" title="statement not covered" >canvas;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (model._openGLRenderWindow.getWebgl2()) {</span>
+<span class="cstat-no" title="statement not covered" >    if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {</span>
 <span class="cstat-no" title="statement not covered" >      model.context.texStorage2D(</span>
         model.target,
         1,
@@ -5156,7 +5156,7 @@ function vtkOpenGLTexture(publicAPI, model) {
     // model.context.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 <span class="cstat-no" title="statement not covered" >    model.context.pixelStorei(model.context.UNPACK_ALIGNMENT, 1);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (model._openGLRenderWindow.getWebgl2()) {</span>
+<span class="cstat-no" title="statement not covered" >    if (model._openGLRenderWindow.getWebgl2() &amp;&amp; !model.resizable) {</span>
 <span class="cstat-no" title="statement not covered" >      model.context.texStorage2D(</span>
         model.target,
         1,
@@ -5314,7 +5314,7 @@ registerOverride('vtkTexture', newInstance);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Feb 06 2023 20:43:48 GMT+0000 (Coordinated Universal Time)
+                at Tue Feb 07 2023 08:04:16 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
