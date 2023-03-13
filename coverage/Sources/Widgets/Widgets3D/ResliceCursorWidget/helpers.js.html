@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.9% </span>
+                <span class="strong">70.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>82/119</span>
+                <span class='fraction'>79/112</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.43% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>81/115</span>
+                <span class='fraction'>78/108</span>
             </div>
         
             
@@ -363,18 +363,7 @@
 <a name='L298'></a><a href='#L298'>298</a>
 <a name='L299'></a><a href='#L299'>299</a>
 <a name='L300'></a><a href='#L300'>300</a>
-<a name='L301'></a><a href='#L301'>301</a>
-<a name='L302'></a><a href='#L302'>302</a>
-<a name='L303'></a><a href='#L303'>303</a>
-<a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a>
-<a name='L306'></a><a href='#L306'>306</a>
-<a name='L307'></a><a href='#L307'>307</a>
-<a name='L308'></a><a href='#L308'>308</a>
-<a name='L309'></a><a href='#L309'>309</a>
-<a name='L310'></a><a href='#L310'>310</a>
-<a name='L311'></a><a href='#L311'>311</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L301'></a><a href='#L301'>301</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -573,20 +562,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">120x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">120x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">120x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">120x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -597,6 +572,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -622,6 +600,9 @@
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -636,8 +617,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">60x</span>
-<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
@@ -693,7 +673,6 @@ import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
 import vtkMatrixBuilder from 'vtk.js/Sources/Common/Core/MatrixBuilder';
 &nbsp;
 import { ViewTypes } from 'vtk.js/Sources/Widgets/Core/WidgetManager/Constants';
-import { getPixelWorldHeightAtCoord } from 'vtk.js/Sources/Widgets/Representations/WidgetRepresentation';
 import {
   planeNames,
   planeNameToViewType,
@@ -875,35 +854,24 @@ export function getOtherLineName(lineName) {
   return `${otherLineName}in${lineInPlaneName}`;
 }
 &nbsp;
-// Update the extremities and the rotation point coordinate of the line
-function computeRotationHandleOrigin(
-  center,
+// Compute the offset of the rotation handle origin
+function computeRotationHandleOriginOffset(
   axis,
   rotationHandlePosition,
   volumeDiagonalLength,
-  displayScaleParams
+  scaleInPixels
 ) {
   // FIXME: p1 and p2 could be placed on the exact boundaries of the volume.
-  let distanceToCenter = volumeDiagonalLength;
-  // displayScaleParams is not null when representation.getScaleInPixels() is true
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (displayScaleParams) {
-    const pixelWorldHeight = <span class="cstat-no" title="statement not covered" >getPixelWorldHeightAtCoord(</span>
-      center,
-      displayScaleParams
-    );
-    const { rendererPixelDims } = <span class="cstat-no" title="statement not covered" >displayScaleParams;</span>
-    const totalSize = <span class="cstat-no" title="statement not covered" >Math.min(rendererPixelDims[0], rendererPixelDims[1]) / 2;</span>
-<span class="cstat-no" title="statement not covered" >    distanceToCenter = pixelWorldHeight * totalSize;</span>
-  }
-  distanceToCenter *= rotationHandlePosition;
-&nbsp;
-  return vtkMath.multiplyAccumulate(center, axis, distanceToCenter, []);
+  return vtkMath.multiplyScalar(
+    [...axis],
+    (rotationHandlePosition * (scaleInPixels ? 1 : <span class="branch-1 cbranch-no" title="branch not covered" >volumeDiagonalLength)</span>) / 2
+  );
 }
 &nbsp;
 // Update the reslice cursor state according to the three planes normals and the origin
 export function updateState(
   widgetState,
-  displayScaleParams,
+  scaleInPixels,
   rotationHandlePosition
 ) {
   // Compute line axis
@@ -931,25 +899,27 @@ export function updateState(
   lineNames.forEach((lineName) =&gt; {
     const planeName = getLinePlaneName(lineName);
     const inPlaneName = getLineInPlaneName(lineName);
-    const rotationPoint0 = computeRotationHandleOrigin(
-      center,
-      axes[`${planeName}${inPlaneName}`],
-      rotationHandlePosition,
-      pdLength,
-      displayScaleParams[planeNameToViewType[inPlaneName]]
+    const direction = axes[`${planeName}${inPlaneName}`];
+    widgetState[`getRotationHandle${lineName}0`]().setOrigin(center);
+    widgetState[`getRotationHandle${lineName}0`]().setOffset(
+      computeRotationHandleOriginOffset(
+        direction,
+        rotationHandlePosition,
+        pdLength,
+        scaleInPixels
+      )
     );
-    widgetState[`getRotationHandle${lineName}0`]().setOrigin(rotationPoint0);
-    const rotationPoint1 = computeRotationHandleOrigin(
-      center,
-      vtkMath.multiplyScalar(axes[`${planeName}${inPlaneName}`], -1, []),
-      rotationHandlePosition,
-      pdLength,
-      displayScaleParams[planeNameToViewType[inPlaneName]]
+    widgetState[`getRotationHandle${lineName}1`]().setOrigin(center);
+    widgetState[`getRotationHandle${lineName}1`]().setOffset(
+      computeRotationHandleOriginOffset(
+        direction,
+        -rotationHandlePosition,
+        pdLength,
+        scaleInPixels
+      )
     );
-    widgetState[`getRotationHandle${lineName}1`]().setOrigin(rotationPoint1);
     const lineHandle = widgetState[`getAxis${lineName}`]();
     lineHandle.setOrigin(center);
-    const direction = vtkMath.subtract(rotationPoint0, center, []);
     const scale = vtkMath.normalize(direction);
     const scale3 = lineHandle.getScale3();
     scale3[2] = 2 * scale;
@@ -1000,7 +970,7 @@ export function transformPlane(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 09 2023 15:33:34 GMT+0000 (Coordinated Universal Time)
+                at Mon Mar 13 2023 14:47:34 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

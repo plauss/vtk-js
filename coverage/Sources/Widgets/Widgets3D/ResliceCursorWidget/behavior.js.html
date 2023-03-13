@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.93% </span>
+                <span class="strong">24.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/188</span>
+                <span class='fraction'>48/194</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.82% </span>
+                <span class="strong">8.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/34</span>
+                <span class='fraction'>3/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">24.06% </span>
+                <span class="strong">24.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/187</span>
+                <span class='fraction'>48/193</span>
             </div>
         
             
@@ -510,7 +510,18 @@
 <a name='L445'></a><a href='#L445'>445</a>
 <a name='L446'></a><a href='#L446'>446</a>
 <a name='L447'></a><a href='#L447'>447</a>
-<a name='L448'></a><a href='#L448'>448</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -535,6 +546,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -984,6 +1006,17 @@ export default function widgetBehavior(publicAPI, model) {
   let isScrolling = false;
   let previousPosition;
 &nbsp;
+  macro.setGet(publicAPI, model, ['keepOrthogonality']);
+&nbsp;
+  publicAPI.setEnableTranslation = <span class="fstat-no" title="function not covered" >(e</span>nable) =&gt; {
+<span class="cstat-no" title="statement not covered" >    model.representations[0].setPickable(enable); </span>// line handle
+<span class="cstat-no" title="statement not covered" >    model.representations[2].setPickable(enable); </span>// center handle
+  };
+&nbsp;
+  publicAPI.setEnableRotation = <span class="fstat-no" title="function not covered" >(e</span>nable) =&gt; {
+<span class="cstat-no" title="statement not covered" >    model.representations[1].setPickable(enable); </span>// rotation handle
+  };
+&nbsp;
   // FIXME: label information should be accessible from activeState instead of parent state.
   publicAPI.getActiveInteraction = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (</span>
@@ -1235,7 +1268,7 @@ export default function widgetBehavior(publicAPI, model) {
 <span class="cstat-no" title="statement not covered" >    model.widgetState.setCenter(newCenter);</span>
 <span class="cstat-no" title="statement not covered" >    updateState(</span>
       model.widgetState,
-      model._factory.getDisplayScaleParams(),
+      model._factory.getScaleInPixels(),
       model._factory.getRotationHandlePosition()
     );
   };
@@ -1293,7 +1326,7 @@ export default function widgetBehavior(publicAPI, model) {
 <span class="cstat-no" title="statement not covered" >    model.widgetState.setCenter(newOrigin);</span>
 <span class="cstat-no" title="statement not covered" >    updateState(</span>
       model.widgetState,
-      model._factory.getDisplayScaleParams(),
+      model._factory.getScaleInPixels(),
       model._factory.getRotationHandlePosition()
     );
   };
@@ -1321,7 +1354,7 @@ export default function widgetBehavior(publicAPI, model) {
 <span class="cstat-no" title="statement not covered" >    model.widgetState.setCenter(newCenter);</span>
 <span class="cstat-no" title="statement not covered" >    updateState(</span>
       model.widgetState,
-      model._factory.getDisplayScaleParams(),
+      model._factory.getScaleInPixels(),
       model._factory.getRotationHandlePosition()
     );
   };
@@ -1337,7 +1370,7 @@ export default function widgetBehavior(publicAPI, model) {
     const center = <span class="cstat-no" title="statement not covered" >model.widgetState.getCenter();</span>
     const previousLineDirection = <span class="cstat-no" title="statement not covered" >activeLineHandle.getDirection();</span>
 <span class="cstat-no" title="statement not covered" >    vtkMath.normalize(previousLineDirection);</span>
-<span class="cstat-no" title="statement not covered" >    if (publicAPI.getActiveRotationPointName() === 'point0') {</span>
+<span class="cstat-no" title="statement not covered" >    if (publicAPI.getActiveRotationPointName() === 'point1') {</span>
 <span class="cstat-no" title="statement not covered" >      vtkMath.multiplyScalar(previousLineDirection, -1);</span>
     }
 &nbsp;
@@ -1365,7 +1398,7 @@ export default function widgetBehavior(publicAPI, model) {
     const planeNormal = model.widgetState.getPlanes()[inViewType].normal;
     publicAPI.rotatePlane(viewType, radianAngle, planeNormal);
 &nbsp;
-    if (model.widgetState.getKeepOrthogonality()) {
+    if (publicAPI.getKeepOrthogonality()) {
       const otherLineName = getOtherLineName(lineName);
       const otherPlaneName = getLinePlaneName(otherLineName);
       publicAPI.rotatePlane(
@@ -1376,7 +1409,7 @@ export default function widgetBehavior(publicAPI, model) {
     }
     updateState(
       model.widgetState,
-      model._factory.getDisplayScaleParams(),
+      model._factory.getScaleInPixels(),
       model._factory.getRotationHandlePosition()
     );
   };
@@ -1411,7 +1444,7 @@ export default function widgetBehavior(publicAPI, model) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 09 2023 15:33:34 GMT+0000 (Coordinated Universal Time)
+                at Mon Mar 13 2023 14:47:34 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
