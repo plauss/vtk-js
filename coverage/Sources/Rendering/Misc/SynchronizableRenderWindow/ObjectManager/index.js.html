@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.55% </span>
+                <span class="strong">12.05% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/215</span>
+                <span class='fraction'>27/224</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.69% </span>
+                <span class="strong">12.9% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/63</span>
+                <span class='fraction'>8/62</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.1% </span>
+                <span class="strong">12.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/206</span>
+                <span class='fraction'>27/213</span>
             </div>
         
             
@@ -778,7 +778,14 @@
 <a name='L713'></a><a href='#L713'>713</a>
 <a name='L714'></a><a href='#L714'>714</a>
 <a name='L715'></a><a href='#L715'>715</a>
-<a name='L716'></a><a href='#L716'>716</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L716'></a><a href='#L716'>716</a>
+<a name='L717'></a><a href='#L717'>717</a>
+<a name='L718'></a><a href='#L718'>718</a>
+<a name='L719'></a><a href='#L719'>719</a>
+<a name='L720'></a><a href='#L720'>720</a>
+<a name='L721'></a><a href='#L721'>721</a>
+<a name='L722'></a><a href='#L722'>722</a>
+<a name='L723'></a><a href='#L723'>723</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1192,8 +1199,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1256,6 +1261,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1265,13 +1283,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1287,6 +1299,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1766,7 +1780,7 @@ function <span class="fstat-no" title="function not covered" >genericUpdater(</s
   const dependencies = <span class="cstat-no" title="statement not covered" >[];</span>
 <span class="cstat-no" title="statement not covered" >  if (state.arrays) {</span>
     const arraysToBind = <span class="cstat-no" title="statement not covered" >[];</span>
-    const promises = <span class="cstat-no" title="statement not covered" >state.arrays.map(<span class="fstat-no" title="function not covered" >(a</span>rrayMetadata) =&gt; {</span>
+    const promises = <span class="cstat-no" title="statement not covered" >Object.values(state.arrays).map(<span class="fstat-no" title="function not covered" >(a</span>rrayMetadata) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      context.start(); </span>// -&gt; start(arrays)
 <span class="cstat-no" title="statement not covered" >      return context</span>
         .getArray(arrayMetadata.hash, arrayMetadata.dataType, context)
@@ -1907,8 +1921,6 @@ function <span class="fstat-no" title="function not covered" >vtkRenderWindowUpd
             }
 <span class="cstat-no" title="statement not covered" >            context.unregisterInstance(context.getInstanceId(viewProp));</span>
           });
-          // Now just remove all the view props
-<span class="cstat-no" title="statement not covered" >          renderer.removeAllViewProps();</span>
         });
       });
   }
@@ -1969,25 +1981,32 @@ function createDataSetUpdate(piecesToFetch = <span class="branch-0 cbranch-no" t
 <span class="cstat-no" title="statement not covered" >    context.start(); </span>// -&gt; start(dataset-update)
 &nbsp;
     // Make sure we provide container for std arrays
+    const localProperties = <span class="cstat-no" title="statement not covered" >{ ...state.properties };</span>
 <span class="cstat-no" title="statement not covered" >    if (!state.arrays) {</span>
-<span class="cstat-no" title="statement not covered" >      state.arrays = [];</span>
+<span class="cstat-no" title="statement not covered" >      state.arrays = {};</span>
     }
 &nbsp;
     // Array members
     // =&gt; convert old format to generic state.arrays
-<span class="cstat-no" title="statement not covered" >    piecesToFetch.forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; piecesToFetch.length; i++) {</span>
+      const key = <span class="cstat-no" title="statement not covered" >piecesToFetch[i];</span>
 <span class="cstat-no" title="statement not covered" >      if (state.properties[key]) {</span>
         const arrayMeta = <span class="cstat-no" title="statement not covered" >state.properties[key];</span>
 <span class="cstat-no" title="statement not covered" >        arrayMeta.registration = `set${macro.capitalize(key)}`;</span>
-<span class="cstat-no" title="statement not covered" >        state.arrays.push(arrayMeta);</span>
-<span class="cstat-no" title="statement not covered" >        delete state.properties[key];</span>
+        const arrayKey = <span class="cstat-no" title="statement not covered" >`${arrayMeta.hash}_${arrayMeta.dataType}`;</span>
+<span class="cstat-no" title="statement not covered" >        state.arrays[arrayKey] = arrayMeta;</span>
+<span class="cstat-no" title="statement not covered" >        delete localProperties[key];</span>
       }
-    });
+    }
 &nbsp;
     // Extract dataset fields
     const fieldsArrays = <span class="cstat-no" title="statement not covered" >state.properties.fields || [];</span>
-<span class="cstat-no" title="statement not covered" >    state.arrays.push(...fieldsArrays);</span>
-<span class="cstat-no" title="statement not covered" >    delete state.properties.fields;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; fieldsArrays.length; i++) {</span>
+      const arrayMeta = <span class="cstat-no" title="statement not covered" >fieldsArrays[i];</span>
+      const arrayKey = <span class="cstat-no" title="statement not covered" >`${arrayMeta.hash}_${arrayMeta.dataType}`;</span>
+<span class="cstat-no" title="statement not covered" >      state.arrays[arrayKey] = arrayMeta;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    delete localProperties.fields;</span>
 &nbsp;
     // Reset any pre-existing fields array
     const arrayToKeep = <span class="cstat-no" title="statement not covered" >{</span>
@@ -2002,7 +2021,9 @@ function createDataSetUpdate(piecesToFetch = <span class="branch-0 cbranch-no" t
 <span class="cstat-no" title="statement not covered" >    removeUnavailableArrays(instance.getCellData(), arrayToKeep.cellData);</span>
 &nbsp;
     // Generic handling
-    const res = <span class="cstat-no" title="statement not covered" >genericUpdater(instance, state, context);</span>
+    const cleanState = <span class="cstat-no" title="statement not covered" >{ ...state };</span>
+<span class="cstat-no" title="statement not covered" >    cleanState.properties = localProperties;</span>
+    const res = <span class="cstat-no" title="statement not covered" >genericUpdater(instance, cleanState, context);</span>
 &nbsp;
     // Finish what we started
 <span class="cstat-no" title="statement not covered" >    context.end(); </span>// -&gt; end(dataset-update)
@@ -2215,7 +2236,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 30 2023 19:43:41 GMT+0000 (Coordinated Universal Time)
+                at Fri Mar 31 2023 19:04:04 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
