@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.88% </span>
+                <span class="strong">55.34% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>413/739</span>
+                <span class='fraction'>404/730</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.34% </span>
+                <span class="strong">49.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>188/381</span>
+                <span class='fraction'>185/377</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.01% </span>
+                <span class="strong">55.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>396/707</span>
+                <span class='fraction'>389/700</span>
             </div>
         
             
@@ -1836,14 +1836,9 @@
 <a name='L1771'></a><a href='#L1771'>1771</a>
 <a name='L1772'></a><a href='#L1772'>1772</a>
 <a name='L1773'></a><a href='#L1773'>1773</a>
-<a name='L1774'></a><a href='#L1774'>1774</a>
-<a name='L1775'></a><a href='#L1775'>1775</a>
-<a name='L1776'></a><a href='#L1776'>1776</a>
-<a name='L1777'></a><a href='#L1777'>1777</a>
-<a name='L1778'></a><a href='#L1778'>1778</a>
-<a name='L1779'></a><a href='#L1779'>1779</a>
-<a name='L1780'></a><a href='#L1780'>1780</a>
-<a name='L1781'></a><a href='#L1781'>1781</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1774'></a><a href='#L1774'>1774</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3033,20 +3028,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">37390195x</span>
-<span class="cline-any cline-yes">38390195x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38390195x</span>
-<span class="cline-any cline-yes">321x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38390195x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
@@ -3626,7 +3612,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Constants from 'vtk.js/Sources/Rendering/OpenGL/Texture/Constants';
 import HalfFloat from 'vtk.js/Sources/Common/Core/HalfFloat';
 import * as macro from 'vtk.js/Sources/macros';
-import vtkDataArray from 'vtk.js/Sources/Common/Core/DataArray';
+import vtkDataArray, {
+  STATIC as dataArrayHelpers,
+} from 'vtk.js/Sources/Common/Core/DataArray';
 import * as vtkMath from 'vtk.js/Sources/Common/Core/Math';
 import vtkViewNode from 'vtk.js/Sources/Rendering/SceneGraph/ViewNode';
 &nbsp;
@@ -4414,7 +4402,7 @@ function vtkOpenGLTexture(publicAPI, model) {
         const webGLInfo = model._openGLRenderWindow.getGLInformations();
         <span class="missing-if-branch" title="if path not taken" >I</span>if (
           webGLInfo.RENDERER.value.match(/WebKit/gi) &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >          navigator.platform.match(/Mac/gi) </span>&amp;&amp;
+          navigator.platform.match(/Mac/gi) &amp;&amp;
 <span class="branch-2 cbranch-no" title="branch not covered" >          model.oglNorm16Ext </span>&amp;&amp;
           (<span class="branch-3 cbranch-no" title="branch not covered" >dataType === VtkDataTypes.UNSIGNED_SHORT </span>||
 <span class="branch-4 cbranch-no" title="branch not covered" >            dataType === VtkDataTypes.SHORT)</span>
@@ -4813,22 +4801,13 @@ function vtkOpenGLTexture(publicAPI, model) {
     // compute min and max values per component
     const min = [];
     const max = [];
+&nbsp;
     for (let c = 0; c &lt; numComps; ++c) {
-      min[c] = data[c];
-      max[c] = data[c];
+      const range = dataArrayHelpers.fastComputeRange(data, c, numComps);
+      min[c] = range.min;
+      max[c] = range.max;
     }
-    let count = 0;
-    for (let i = 0; i &lt; numPixelsIn; ++i) {
-      for (let c = 0; c &lt; numComps; ++c) {
-        if (data[count] &lt; min[c]) {
-          min[c] = data[count];
-        }
-        if (data[count] &gt; max[c]) {
-          max[c] = data[count];
-        }
-        count++;
-      }
-    }
+&nbsp;
     const offset = [];
     const scale = [];
     for (let c = 0; c &lt; numComps; ++c) {
@@ -5410,7 +5389,7 @@ registerOverride('vtkTexture', newInstance);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Mar 31 2023 19:04:04 GMT+0000 (Coordinated Universal Time)
+                at Wed Apr 05 2023 09:04:24 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
