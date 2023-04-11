@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.94% </span>
+                <span class="strong">82.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>423/510</span>
+                <span class='fraction'>418/505</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.21% </span>
+                <span class="strong">73.65% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>141/190</span>
+                <span class='fraction'>137/186</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.29% </span>
+                <span class="strong">96.15% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>26/27</span>
+                <span class='fraction'>25/26</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.67% </span>
+                <span class="strong">83.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>410/490</span>
+                <span class='fraction'>405/485</span>
             </div>
         
             
@@ -1223,17 +1223,7 @@
 <a name='L1158'></a><a href='#L1158'>1158</a>
 <a name='L1159'></a><a href='#L1159'>1159</a>
 <a name='L1160'></a><a href='#L1160'>1160</a>
-<a name='L1161'></a><a href='#L1161'>1161</a>
-<a name='L1162'></a><a href='#L1162'>1162</a>
-<a name='L1163'></a><a href='#L1163'>1163</a>
-<a name='L1164'></a><a href='#L1164'>1164</a>
-<a name='L1165'></a><a href='#L1165'>1165</a>
-<a name='L1166'></a><a href='#L1166'>1166</a>
-<a name='L1167'></a><a href='#L1167'>1167</a>
-<a name='L1168'></a><a href='#L1168'>1168</a>
-<a name='L1169'></a><a href='#L1169'>1169</a>
-<a name='L1170'></a><a href='#L1170'>1170</a>
-<a name='L1171'></a><a href='#L1171'>1171</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1161'></a><a href='#L1161'>1161</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1345,21 +1335,6 @@
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">24x</span>
@@ -2374,6 +2349,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -2515,21 +2495,6 @@ function vtkOpenGLImageMapper(publicAPI, model) {
     const actor = model.openGLImageSlice.getRenderable();
     const ren = model._openGLRenderer.getRenderable();
     publicAPI.renderPiece(ren, actor);
-  };
-&nbsp;
-  publicAPI.buildShaders = (shaders, ren, actor) =&gt; {
-    publicAPI.getShaderTemplate(shaders, ren, actor);
-&nbsp;
-    model.lastRenderPassShaderReplacement = model.currentRenderPass
-      ? model.currentRenderPass.getShaderReplacement()
-      : null;
-&nbsp;
-    // apply any renderPassReplacements
-    if (model.lastRenderPassShaderReplacement) {
-      model.lastRenderPassShaderReplacement(shaders);
-    }
-&nbsp;
-    publicAPI.replaceShaderValues(shaders, ren, actor);
   };
 &nbsp;
   publicAPI.getShaderTemplate = (shaders, ren, actor) =&gt; {
@@ -3544,6 +3509,11 @@ export function extend(publicAPI, model, initialValues = <span class="branch-0 c
     model,
     initialValues
   );
+  vtkReplacementShaderMapper.implementBuildShadersWithReplacements(
+    publicAPI,
+    model,
+    initialValues
+  );
 &nbsp;
   model.tris = vtkHelper.newInstance();
   model.openGLTexture = vtkOpenGLTexture.newInstance({ resizable: true });
@@ -3580,7 +3550,7 @@ registerOverride('vtkAbstractImageMapper', newInstance);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Apr 11 2023 00:08:46 GMT+0000 (Coordinated Universal Time)
+                at Tue Apr 11 2023 15:31:31 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
